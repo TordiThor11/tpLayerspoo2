@@ -19,4 +19,8 @@ public class Empleado {
     public String toString() {
         return this.apellido + " " + this.nombre + " " + this.fechaDeNacimiento + " " + this.mail;
     }
+
+    public boolean esCumpleanios() {
+        return fechaDeNacimiento.getDayOfMonth() == LocalDate.now().getDayOfMonth() && fechaDeNacimiento.getMonth() == LocalDate.now().getMonth();
+    }
 }
