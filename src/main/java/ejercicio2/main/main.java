@@ -13,7 +13,7 @@ public class main {
         }*/
         var controladorDeEmpleados = new ControladorDeEmpleados(db, new MailJakarta("sandbox.smtp.mailtrap.io", "2525", "136bf073b21441", "035c321df45fe7"));
 //        System.out.println(new Empleado("gomez", "juan", LocalDate.of(1999, 4, 25), "juan@gmail.com").esCumpleanios());
-
+        controladorDeEmpleados.enviarSaludoDeCumpleanios();
     }
 
 }

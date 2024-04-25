@@ -6,6 +6,8 @@ public class Empleado {
     private String apellido;
     private String nombre;
     private LocalDate fechaDeNacimiento;
+
+
     private String mail;
 
     public Empleado(String apellido, String nombre, LocalDate fechaDeNacimiento, String mail) {
@@ -22,5 +24,9 @@ public class Empleado {
 
     public boolean esCumpleanios() {
         return fechaDeNacimiento.getDayOfMonth() == LocalDate.now().getDayOfMonth() && fechaDeNacimiento.getMonth() == LocalDate.now().getMonth();
+    }
+
+    public String getMail() {
+        return mail;
     }
 }
