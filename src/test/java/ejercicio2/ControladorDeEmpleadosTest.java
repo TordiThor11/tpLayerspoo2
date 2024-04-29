@@ -14,10 +14,13 @@ public class ControladorDeEmpleadosTest {
         Assert.assertTrue(empleado.esCumpleanios());
     }
 
+    @Test
     public void enviarSaludosDeCumpleanios() {
-        var controladorDeEmpleados = new ControladorDeEmpleados(new FakeIOData(), new FakeEnvioDeMail());
-        controladorDeEmpleados.enviarSaludoDeCumpleanios();
-        //No tengo asserts?
+        var fakeData = new FakeIOData();
+        var fakeEnvioDeMail = new FakeEnvioDeMail();
+        var controladorDeEmpleados = new ControladorDeEmpleados(fakeData, fakeEnvioDeMail);
+        controladorDeEmpleados.enviarSaludoDeCumpleanios(); //irrelevante para el test, pero ejecuta las lineas de codigo y me da mas coverage, es util?
+        Assert.assertEquals(1, fakeEnvioDeMail.cantidadDeSaludosMandados(fakeData));
     }
 
 }

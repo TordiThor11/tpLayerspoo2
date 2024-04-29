@@ -7,7 +7,7 @@ public class ControladorDeParticipantes {
         this.registroDeParticipantes = registroDeParticipantes;
     }
 
-    public void registrarParticipante(Participante participante) {
+    public void registrarParticipante(Participante participante) throws Exception {
         this.registroDeParticipantes.registrar(participante);
     }
 }

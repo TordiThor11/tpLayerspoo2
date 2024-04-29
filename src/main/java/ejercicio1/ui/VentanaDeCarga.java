@@ -8,7 +8,6 @@ import javax.swing.border.EmptyBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.sql.SQLException;
 
 public class VentanaDeCarga extends JFrame {
     private JTextField nombre;
@@ -45,10 +44,8 @@ public class VentanaDeCarga extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 try {
                     onBotonCargar();
-                } catch (SQLException e1) {
-                    throw new RuntimeException(e1);
                 } catch (Exception ex) {
-                    throw new RuntimeException(ex);
+                    JOptionPane.showMessageDialog(null, ex.getMessage(), "ERROR", JOptionPane.ERROR_MESSAGE);
                 }
             }
         });
