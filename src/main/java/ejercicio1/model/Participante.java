@@ -6,6 +6,13 @@ public class Participante {
     private String region;
 
     public Participante(String nombre, String telefono, String region) throws Exception {
+        validar(nombre, telefono, region);
+        this.nombre = nombre;
+        this.telefono = telefono;
+        this.region = region;
+    }
+
+    private void validar(String nombre, String telefono, String region) throws Exception {
         if (!esValidoElTelefono(telefono)) {
             throw new Exception("Telefono invalido");
         }
@@ -15,9 +22,6 @@ public class Participante {
         if (!esValido(nombre, telefono, region)) {
             throw new Exception("Campos vacios");
         }
-        this.nombre = nombre;
-        this.telefono = telefono;
-        this.region = region;
     }
 
     private boolean esValido(String nombre, String telefono, String region) {
